@@ -1,0 +1,8 @@
+{
+  "name": "deeplink",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DEEPLINK - a 1996 cyberspace flight shooter driven by trance and hard techno (HTML + JS + WebGPU)",
+  "scripts": { "serve": "python3 tools/serve.py 8000", "beatmap": "node tools/beatmap.mjs", "jobs": "python3 tools/make_jobs.py" }
+}

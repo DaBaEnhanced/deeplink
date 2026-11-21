@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>DEEPLINK beat mapper</title>
+<style>
+@font-face { font-family: 'VT323'; src: url(../assets/fonts/vt323.woff2) format('woff2'); }
+body { margin: 0; background: #101418; color: #cfe; font: 18px VT323, monospace; }
+header { display: flex; gap: 10px; align-items: center; padding: 8px 12px; background: #000080; color: #fff; flex-wrap: wrap; }
+button, select, input { font: inherit; font-size: 18px; }
+#wrap { position: relative; margin: 10px; }
+canvas { display: block; width: 100%; background: #000; cursor: crosshair; }
+#info { margin: 0 12px; white-space: pre-wrap; }
+.legend span { display: inline-block; padding: 0 6px; margin-right: 4px; color: #000; }
+</style></head>
+<body>
+<header>
+  <b>BEAT MAPPER</b>
+  <select id="track"></select>
+  <button id="analyse">Re-analyse</button>
+  <button id="play">▶ Play</button>
+  <label><input type="checkbox" id="click" checked> metronome</label>
+  <label>zoom <input type="range" id="zoom" min="1" max="12" value="1" step="0.5"></label>
+  <label>BPM <input id="bpm" size="8"></label><label>offset <input id="offset" size="7"></label><button id="applyTempo">apply</button>
+  <button id="save">Save</button>
+  <span class="legend"><span style="background:#888">intro</span><span style="background:#ff0">build</span><span style="background:#f40">drop</span><span style="background:#4cf">breakdown</span><span style="background:#f0f">drop2</span><span style="background:#8f8">outro</span></span>
+</header>
+<div id="wrap"><canvas id="cv" width="1600" height="360"></canvas></div>
+<div id="info">Click: seek · Shift+click on a section start: drag it (snaps to bars) · Right-click a section: change its type · Alt+click: add a section at that bar · Ctrl+click a section: delete it</div>
+<script type="module">
+import { features, analyse, finishMap } from '../src/audio/analysis.js';
+const COL = { intro: '#888', build: '#ff0', drop: '#f40', breakdown: '#4cf', drop2: '#f0f', outro: '#8f8' };
+const TYPES = Object.keys(COL);
+const $ = id => document.getElementById(id);
+const cv = $('cv'), g = cv.getContext('2d');
+let ctx, buffer, map, feat, id, src, startCtx = 0, startT = 0, playing = false, drag = null, peaks;
+const music = await fetch('../data/music.json').then(r => r.json());
+const ls = await fetch('../assets/music/').then(r => r.text()).catch(() => '');
+const files = [...ls.matchAll(/href="([^"]+\.(?:mp3|ogg|wav|flac|opus))"/g)].map(m => decodeURIComponent(m[1]));
+for (const f of files) $('track').appendChild(Object.assign(document.createElement('option'), { value: f, textContent: f }));
+if (!files.length) $('info').textContent = 'No files in assets/music yet.';
+$('track').onchange = () => load($('track').value);
+async function load(file) {
+  ctx = ctx || new AudioContext(); stop();
+  id = file.replace(/\.\w+$/, '');
+  buffer = await ctx.decodeAudioData(await (await fetch('../assets/music/' + file)).arrayBuffer());
+  const mono = buffer.getChannelData(0);
+  peaks = new Float32Array(1600); const step = Math.floor(mono.length / 1600);
+  for (let i = 0; i < 1600; i++) { let m = 0; for (let j = 0; j < step; j += 8) m = Math.max(m, Math.abs(mono[i * step + j])); peaks[i] = m; }
+  const r = await fetch(`../data/tracks/${id}.json`, { cache: 'no-cache' });
+  map = r.ok ? await r.json() : null;
+  if (!map) doAnalyse(); else finishMap(map);
+  $('bpm').value = map.bpm; $('offset').value = map.offset; draw();
+}
+function doAnalyse() {
+  const base = music.find(m => m.id === id.replace(/_remix$/, '')) || {};
+  const step = Math.round(buffer.sampleRate / 22050), n = Math.floor(buffer.length / step), ds = new Float32Array(n), ch = buffer.getChannelData(0);
+  for (let i = 0; i < n; i++) ds[i] = ch[i * step];
+  feat = features(ds, buffer.sampleRate / step);
+  map = finishMap(analyse(feat, { bpm: base.bpm, bpm2: base.bpm2 })); map.id = id;
+  $('bpm').value = map.bpm; $('offset').value = map.offset; draw();
+}
+$('analyse').onclick = doAnalyse;
+$('applyTempo').onclick = () => { map.bpm = +$('bpm').value; map.offset = +$('offset').value; map.tempos = [{ t: 0, bpm: map.bpm, offset: map.offset }]; map.bars = null; finishMap(map); draw(); };
+const view = () => { const z = +$('zoom').value, len = map.length / z; const t = now(); const a = Math.max(0, Math.min(map.length - len, t - len / 2)); return [a, len]; };
+const now = () => (playing ? startT + (ctx.currentTime - startCtx) : startT);
+const tx = t => { const [a, len] = view(); return ((t - a) / len) * cv.width; };
+const xt = x => { const [a, len] = view(); return a + (x / cv.width) * len; };
+function draw() {
+  if (!map) return;
+  const W = cv.width, H = cv.height; g.clearRect(0, 0, W, H);
+  map.sections.forEach((s, i) => { const e = map.sections[i + 1]?.t ?? map.length; g.fillStyle = COL[s.type] + '55'; g.fillRect(tx(s.t), 0, tx(e) - tx(s.t), H); g.fillStyle = COL[s.type]; g.fillRect(tx(s.t), 0, 3, H); g.fillText(`${s.type} ${s.energy ?? ''}`, tx(s.t) + 5, 14); });
+  const [a, len] = view();
+  g.strokeStyle = '#3af'; g.beginPath();
+  for (let x = 0; x < W; x++) { const t = xt(x); const p = peaks[Math.floor((t / map.length) * 1600)] || 0; g.moveTo(x, H / 2 - p * H * 0.45); g.lineTo(x, H / 2 + p * H * 0.45); } g.stroke();
+  for (const b of map.beats) if (b >= a && b <= a + len) { g.fillStyle = 'rgba(255,255,255,0.25)'; g.fillRect(tx(b), H - 30, 1, 30); }
+  for (const b of map.bars) if (b >= a && b <= a + len) { g.fillStyle = '#fff'; g.fillRect(tx(b), H - 44, 1, 44); }
+  g.fillStyle = '#f00'; g.fillRect(tx(now()), 0, 2, H);
+  g.fillStyle = '#fff'; g.font = '16px VT323'; g.fillText(`${id}  ${map.bpm} BPM  ${map.length.toFixed(1)} s  t=${now().toFixed(2)}${map.edited ? '  (edited)' : ''}`, 8, H - 50);
+}
+const snapBar = t => map.bars.reduce((p, b) => (Math.abs(b - t) < Math.abs(p - t) ? b : p), 0);
+cv.oncontextmenu = e => { e.preventDefault(); const t = xt(e.offsetX * cv.width / cv.clientWidth); const i = map.sections.findLastIndex(s => s.t <= t); if (i < 0) return; const s = map.sections[i]; s.type = TYPES[(TYPES.indexOf(s.type) + 1) % TYPES.length]; map.edited = true; draw(); };
+cv.onmousedown = e => {
+  const x = e.offsetX * cv.width / cv.clientWidth, t = xt(x);
+  if (e.altKey) { map.sections.push({ t: snapBar(t), type: 'build', energy: 0.6 }); map.sections.sort((p, q) => p.t - q.t); map.edited = true; return draw(); }
+  const near = map.sections.findIndex(s => Math.abs(tx(s.t) - x) < 8);
+  if (e.ctrlKey && near > 0) { map.sections.splice(near, 1); map.edited = true; return draw(); }
+  if (e.shiftKey && near > 0) { drag = near; return; }
+  seek(t);
+};
+cv.onmousemove = e => { if (drag == null) return; map.sections[drag].t = snapBar(xt(e.offsetX * cv.width / cv.clientWidth)); map.edited = true; draw(); };
+addEventListener('mouseup', () => { if (drag != null) map.sections.sort((p, q) => p.t - q.t); drag = null; });
+function seek(t) { const was = playing; stop(); startT = Math.max(0, t); if (was) play(); draw(); }
+function stop() { if (src) { try { src.stop(); } catch (e) { /* */ } src = null; } if (playing) startT = now(); playing = false; $('play').textContent = '▶ Play'; }
+function play() {
+  src = ctx.createBufferSource(); src.buffer = buffer; src.connect(ctx.destination); startCtx = ctx.currentTime + 0.05; src.start(startCtx, startT); playing = true; $('play').textContent = '■ Stop';
+  // metronome
+  if ($('click').checked) for (const b of map.beats) if (b > startT && b < startT + 600) { const o = ctx.createOscillator(), gg = ctx.createGain(); o.frequency.value = map.bars.includes(b) ? 1800 : 1200; gg.gain.setValueAtTime(0.2, startCtx + b - startT); gg.gain.exponentialRampToValueAtTime(0.001, startCtx + b - startT + 0.05); o.connect(gg); gg.connect(ctx.destination); o.start(startCtx + b - startT); o.stop(startCtx + b - startT + 0.06); }
+}
+$('play').onclick = () => (playing ? stop() : play());
+addEventListener('keydown', e => { if (e.code === 'Space') { e.preventDefault(); playing ? stop() : play(); } });
+$('save').onclick = async () => {
+  const out = { ...map }; delete out.beats; out.edited = true;
+  const r = await fetch(`/beatmap/save?id=${encodeURIComponent(id)}`, { method: 'POST', body: JSON.stringify(out) });
+  $('info').textContent = r.ok ? `Saved data/tracks/${id}.json` : 'Save failed (run tools/serve.py)';
+};
+(function loop() { draw(); requestAnimationFrame(loop); })();
+if (files.length) load(files[0]);
+</script>
+</body></html>

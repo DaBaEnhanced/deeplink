@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>DEEPLINK kit & pattern lab</title>
+<style>
+@font-face { font-family: 'VT323'; src: url(../assets/fonts/vt323.woff2) format('woff2'); }
+body { margin: 0; background: #000; color: #cfe; font: 18px VT323, monospace; overflow: hidden; }
+#gpu, #hud { position: absolute; left: 0; top: 0; width: 100vw; height: 100vh; image-rendering: pixelated; }
+#panel { position: absolute; right: 8px; top: 8px; width: 270px; background: rgba(0,0,40,0.85); border: 1px solid #4af; padding: 8px; }
+#panel select, #panel button, #panel input { font: inherit; font-size: 17px; width: 100%; margin: 2px 0; }
+#panel label { display: block; margin-top: 6px; }
+</style></head>
+<body>
+<canvas id="gpu"></canvas><canvas id="hud"></canvas>
+<div id="panel">
+  <b>KIT & PATTERN LAB</b>
+  <label>Layer kit<select id="kit"></select></label>
+  <label>Palette<select id="pal"><option value="0">before the Breach</option><option value="1">after the Breach</option></select></label>
+  <label>Speed ×<input id="speed" type="range" min="0" max="2" step="0.1" value="1"></label>
+  <label>Spawn enemy<select id="enemy"></select></label><button id="spawn">Spawn wave of 4</button>
+  <label>Boss<select id="boss"></select></label><button id="spawnBoss">Spawn boss</button>
+  <button id="clear">Clear</button>
+  <label><input type="checkbox" id="bot" checked style="width:auto"> autopilot</label>
+  <div id="stat"></div>
+  <p style="font-size:15px;color:#8ab">Tunes the procedural layer kits (layers.js) and enemy / boss patterns (enemies.js, bosses.js) on a synthetic 140 BPM beat. Edit the files, reload.</p>
+</div>
+<script type="module">
+import { Renderer } from '../src/render/renderer.js';
+import { buildLib } from '../src/render/lib.js';
+import { KITS } from '../src/dive/layers.js';
+import { Path, buildDistance } from '../src/dive/path.js';
+import { World } from '../src/dive/world.js';
+import { DiveSim } from '../src/sim/dive.js';
+import { DiveView } from '../src/dive/view.js';
+import { ENEMY_TYPES } from '../src/sim/enemies.js';
+import { BOSSES } from '../src/sim/bosses.js';
+import { templateMap, finishMap } from '../src/audio/analysis.js';
+import { rng } from '../src/core/rng.js';
+import { Bot } from '../src/sim/bot.js';
+import { Input } from '../src/core/input.js';
+import { DEFAULT_OPTIONS } from '../src/core/save.js';
+import { Hud } from '../src/ui/hud.js';
+const $ = id => document.getElementById(id);
+const r = new Renderer($('gpu')); await r.init(); const lib = buildLib(r);
+const opts = { ...DEFAULT_OPTIONS };
+const input = new Input($('hud'), opts); const hud = new Hud(); const bot = new Bot();
+for (const k of Object.keys(KITS)) $('kit').appendChild(new Option(KITS[k].name, k));
+for (const k of Object.keys(ENEMY_TYPES)) $('enemy').appendChild(new Option(k, k));
+for (const k of Object.keys(BOSSES)) $('boss').appendChild(new Option(BOSSES[k].name, k));
+let sim, view, kit, t = 0;
+function build() {
+  kit = KITS[$('kit').value];
+  const map = finishMap(templateMap(140, { bars: [['intro', 400, 0.6]] }));
+  const dist = buildDistance(map);
+  const path = new Path(dist.length + 300, { ...kit.path, seed: 7 });
+  const world = new World(path, kit, lib); kit.build(world, rng(7), map, {}); world.sort();
+  sim = new DiveSim({ dive: { id: 'lab', title: kit.name, layer: 1 }, kit, map, dist, script: { events: [] }, mods: { foresight: 1 }, drift: 0, difficulty: 'normal', opts, sfx: () => {} });
+  view = new DiveView(lib, world, kit, sim, opts); t = 0;
+}
+$('kit').onchange = build; build();
+$('spawn').onclick = () => { for (let i = 0; i < 4; i++) sim.spawnRaw($('enemy').value, { d: 200 + i * 8, x: (i - 1.5) * 6, y: (i % 2) * 4 - 2, hold: 70 }); };
+$('spawnBoss').onclick = () => sim.spawnBoss($('boss').value, t + 60);
+$('clear').onclick = () => { sim.enemies = []; sim.ebullets = []; sim.boss = null; };
+let last = performance.now();
+function frame(now) {
+  requestAnimationFrame(frame);
+  const dt = Math.min(0.1, (now - last) / 1000); last = now; t += dt * +$('speed').value;
+  const W = innerWidth, H = innerHeight; for (const c of [$('gpu'), $('hud')]) if (c.width !== W) { c.width = W; c.height = H; }
+  const k = Math.max(1, Math.floor(Math.min(W / 400, H / 300))); const vw = { x: (W - 400 * k) >> 1, y: (H - 300 * k) >> 1, w: 400 * k, h: 300 * k };
+  input.update();
+  sim.update(t, $('bot').checked ? bot.input(sim) : input, dt); sim.integrity = 100;
+  if ($('pal').value === '1') { sim.dropSeen = true; sim.breachT = -10; } else { sim.dropSeen = false; sim.breachT = -9; }
+  r.begin();
+  const F = view.render(r, { kick: Math.exp(-sim.beatPhase * 7), drift: 0 }, t);
+  r.end(F, { bloom: 1, dither: true }, vw);
+  const g = $('hud').getContext('2d'); g.clearRect(0, 0, W, H);
+  hud.draw(g, W, H, sim, view, { view: vw, kick: 0, time: t, titleT: 9, diveLabel: '', title: '', track: '', sectionLabel: 'LAB', subtitles: false, beatIndicator: true });
+  $('stat').textContent = `enemies ${sim.enemies.filter(e => !e.dead && !e.gone).length} · bullets ${sim.ebullets.length} · instances ${r.count}`;
+}
+requestAnimationFrame(frame);
+</script>
+</body></html>

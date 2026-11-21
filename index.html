@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEEPLINK</title>
+<link rel="icon" href="favicon.png">
+<style>
+@font-face { font-family: 'VT323'; src: url(assets/fonts/vt323.woff2) format('woff2'); }
+@font-face { font-family: 'Special Elite'; src: url(assets/fonts/special-elite.woff2) format('woff2'); }
+@font-face { font-family: 'Comic Neue'; font-weight: 700; src: url(assets/fonts/comic-neue-700.woff2) format('woff2'); }
+@font-face { font-family: 'Patrick Hand'; src: url(assets/fonts/patrick-hand.woff2) format('woff2'); }
+:root { --face: #c0c0c0; --hi: #ffffff; --lo: #808080; --dk: #000000; --title: #000080; --title2: #1084d0; --ink: #0b0b0b; --paper: #f2efe6; --cyan: #7cf7ff; }
+html, body { margin: 0; height: 100%; background: #000; overflow: hidden; color: #fff; font-family: 'VT323', monospace; user-select: none; }
+#gpu, #hud { position: absolute; left: 0; top: 0; width: 100vw; height: 100vh; display: block; }
+.win canvas { display: block; }
+#gpu { image-rendering: pixelated; }
+#ui { position: absolute; inset: 0; pointer-events: none; }
+#ui > * { pointer-events: auto; }
+.hidden { display: none !important; }
+/* ---------------------------------------------------------------- 1996 desktop windows */
+.win { position: absolute; background: var(--face); color: #000; border: 2px solid; border-color: var(--hi) var(--dk) var(--dk) var(--hi); box-shadow: inset -1px -1px var(--lo), inset 1px 1px #dfdfdf, 0 0 40px rgba(0,255,255,0.08); font-family: 'VT323', monospace; font-size: 22px; }
+.win .tb { background: linear-gradient(90deg, var(--title), var(--title2)); color: #fff; padding: 3px 6px; display: flex; justify-content: space-between; align-items: center; font-size: 20px; letter-spacing: 1px; }
+.win .tb .x { background: var(--face); color: #000; width: 18px; height: 16px; line-height: 14px; text-align: center; border: 2px solid; border-color: var(--hi) var(--dk) var(--dk) var(--hi); cursor: pointer; font-size: 16px; }
+.win .body { padding: 10px 12px; }
+.btn { display: block; width: 100%; margin: 5px 0; padding: 4px 10px; background: var(--face); border: 2px solid; border-color: var(--hi) var(--dk) var(--dk) var(--hi); box-shadow: inset -1px -1px var(--lo); font: inherit; font-size: 22px; text-align: left; cursor: pointer; color: #000; }
+.btn:hover, .btn.sel { background: var(--title); color: #fff; }
+.btn:active { border-color: var(--dk) var(--hi) var(--hi) var(--dk); }
+.btn[disabled] { color: var(--lo); text-shadow: 1px 1px #fff; cursor: default; background: var(--face); }
+.btn.inl { display: inline-block; width: auto; margin-right: 6px; }
+.sunk { background: #fff; border: 2px solid; border-color: var(--lo) var(--hi) var(--hi) var(--lo); padding: 6px; }
+.row { display: flex; gap: 10px; align-items: center; }
+.muted { color: #404040; }
+.center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+label.opt { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 4px 0; font-size: 20px; }
+select, input[type=range] { font: inherit; font-size: 18px; }
+.tabs { display: flex; gap: 2px; margin-bottom: -2px; }
+.tabs .tab { padding: 2px 10px; background: var(--face); border: 2px solid; border-color: var(--hi) var(--dk) transparent var(--hi); cursor: pointer; }
+.tabs .tab.on { position: relative; top: -2px; background: var(--face); }
+.tabpane { border: 2px solid; border-color: var(--hi) var(--dk) var(--dk) var(--hi); padding: 10px; min-height: 300px; max-height: 60vh; overflow: auto; }
+/* ---------------------------------------------------------------- boot / title */
+#boot { position: absolute; inset: 0; background: #000; color: #b0b0b0; font-size: 22px; padding: 24px 32px; white-space: pre; line-height: 1.15; }
+#title { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+#title .bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: contrast(1.1); opacity: 0.55; }
+#title .logo { position: relative; font-family: 'VT323'; font-size: min(20vw, 220px); letter-spacing: 0.08em; line-height: 0.9; background: linear-gradient(180deg, #fff 0%, #9ff 38%, #126 50%, #6cf 52%, #fff 80%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 18px rgba(0,255,255,0.6)) drop-shadow(3px 3px 0 #003); }
+#title .sub { position: relative; font-size: 28px; color: #9ff; letter-spacing: 0.4em; margin-top: 8px; text-shadow: 0 0 8px #0ff; }
+#title .press { position: relative; margin-top: 8vh; font-size: 30px; animation: blink 1.1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+/* ---------------------------------------------------------------- lab */
+#lab { position: absolute; inset: 0; background: #0a0a0a; }
+#lab .bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.22; filter: grayscale(1) contrast(1.2); }
+#lab .hdr { position: absolute; left: 16px; right: 16px; top: 10px; font-size: 26px; color: #ddd; display: flex; justify-content: space-between; text-shadow: 0 0 6px #000; }
+.card { background: #e8e4d8; color: #111; border: 2px solid #000; margin-bottom: 10px; display: flex; gap: 10px; padding: 6px; cursor: pointer; font-size: 19px; line-height: 1.05; }
+.card:hover { outline: 3px solid var(--title2); }
+.card.done { opacity: 0.6; }
+.card .th { width: 150px; height: 100px; background: #bbb center/cover; border: 2px solid #000; flex: none; filter: grayscale(1); }
+.card h3 { margin: 0 0 3px; font-size: 24px; font-weight: normal; }
+.tag { display: inline-block; padding: 0 5px; border: 1px solid #000; font-size: 16px; margin-right: 4px; }
+.tag.job { background: #222; color: #fff; } .tag.hack { background: #ffd860; } .tag.signal { background: #ffc0e8; } .tag.story { background: #9ff; }
+.meter { height: 14px; background: #fff; border: 2px solid; border-color: var(--lo) var(--hi) var(--hi) var(--lo); position: relative; }
+.meter > i { position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg, #66f, #f6f); }
+.meter > b { position: absolute; top: -3px; bottom: -3px; width: 2px; background: #000; }
+.slots { display: flex; gap: 4px; } .slots i { width: 22px; height: 28px; border: 2px solid #000; background: #fff; display: inline-block; } .slots i.on { background: #ffd860; }
+/* ---------------------------------------------------------------- results / modal */
+.modal-bg { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+.rank { font-size: 140px; line-height: 0.9; text-align: center; color: #000080; text-shadow: 3px 3px #fff, 6px 6px #000; }
+.stat { display: flex; justify-content: space-between; font-size: 22px; border-bottom: 1px dotted #888; }
+.modcard { border: 2px solid #000; background: #fff; padding: 8px; cursor: pointer; flex: 1; font-size: 19px; }
+.modcard:hover { background: #dff; }
+.modcard h3 { margin: 0; font-size: 26px; font-weight: normal; }
+#toast { position: absolute; left: 50%; bottom: 8vh; transform: translateX(-50%); font-size: 26px; background: rgba(0,0,0,0.75); border: 1px solid #9ff; padding: 6px 16px; color: #fff; pointer-events: none; }
+#credits { position: absolute; inset: 0; background: #000; overflow: hidden; }
+#credits .roll { position: absolute; left: 0; right: 0; text-align: center; font-size: 28px; line-height: 1.5; color: #ddd; }
+#err { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 26px; padding: 40px; text-align: center; color: #f88; }
+</style>
+</head>
+<body>
+<canvas id="gpu"></canvas>
+<canvas id="hud"></canvas>
+<div id="ui"></div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

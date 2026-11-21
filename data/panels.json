@@ -1,0 +1,1456 @@
+[
+ {
+  "id": "R-01",
+  "aspect": "3:2",
+  "title": "Theo Brandt",
+  "section": "R. Reference Sheets",
+  "drift": false,
+  "prompt": "character model sheet of Theo Brandt, a lean 24-year-old man with messy dark hair, stubble and sharp restless eyes, worn denim jacket over a faded band t-shirt, cargo trousers, fingerless cycling gloves, a courier bag; front, three-quarter, side and back views, plus four expressions (cocky grin, wonder, exhaustion, fear), white background",
+  "text": []
+ },
+ {
+  "id": "R-02",
+  "aspect": "3:2",
+  "title": "Dr. Lena Aurich and Conrad Weyl",
+  "section": "R. Reference Sheets",
+  "drift": false,
+  "prompt": "character model sheet: Dr. Lena Aurich, a 45-year-old woman with short grey-streaked hair, thin wire glasses, a lab coat over a turtleneck, a tired kind face, holding a clipboard; Conrad Weyl, a man in his fifties with slicked-back grey hair, an expensive double-breasted suit, a calm controlled smile; front and three-quarter views, white background",
+  "text": []
+ },
+ {
+  "id": "R-03",
+  "aspect": "3:2",
+  "title": "Pike and Hollis",
+  "section": "R. Reference Sheets",
+  "drift": false,
+  "prompt": "character model sheet: Isaac \"Pike\" Delgado, a heavyset young Latino man with long curly hair in a ponytail, round glasses, an oversized flannel shirt, a headset; Hollis, a broad security chief in his forties with a crew cut, dark suit, earpiece, stern face; front and three-quarter views, white background",
+  "text": []
+ },
+ {
+  "id": "R-04",
+  "aspect": "3:2",
+  "title": "Juno Marsh",
+  "section": "R. Reference Sheets",
+  "drift": false,
+  "prompt": "character sheet of Juno Marsh: left, as a human, a thin pale woman in her late twenties with a shaved head and short regrowing hair, lying in a hospital bed with electrodes on her scalp; right, Juno in the virtual world, a tall luminous female figure drawn as white light against black, hair made of flowing lines, a serene vast face, white background for the left half and solid black for the right half",
+  "text": []
+ },
+ {
+  "id": "R-05",
+  "aspect": "21:9",
+  "title": "The DEEPLINK rig and lab",
+  "section": "R. Reference Sheets",
+  "drift": false,
+  "prompt": "design sheet of the DEEPLINK neural immersion rig in a 1996 research lab: a padded reclining chair, a bulky helmet with a dark visor and dozens of cables, a data glove, tall racks of workstation computers with CRT monitors, an observation window, fluorescent ceiling lights, cables on the floor",
+  "text": []
+ },
+ {
+  "id": "R-06",
+  "aspect": "21:9",
+  "title": "The avatar",
+  "section": "R. Reference Sheets",
+  "drift": false,
+  "prompt": "design sheet of a humanoid figure made of light flying like a diver with arms swept back, drawn in white ink lines on solid black, wireframe body with a bright core and long light trails, three stages from left to right: still recognisably human, partly abstract, almost pure geometry",
+  "text": []
+ },
+ {
+  "id": "I-01",
+  "aspect": "21:9",
+  "title": "The city",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "establishing shot of a grey 1996 city at night in heavy rain, wet streets, neon shop signs drawn in white, elevated train tracks, a lone bicycle courier crossing a puddled intersection under a streetlight",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "1996. THE FUTURE WAS STILL LOADING."
+   }
+  ]
+ },
+ {
+  "id": "I-02",
+  "aspect": "3:2",
+  "title": "The arcade",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "crowded arcade hall at night, rows of cabinets glowing, Theo (lean, messy dark hair, denim jacket, fingerless gloves) at a flight-game cabinet, a crowd of teenagers watching over his shoulders, his hands a blur on the controls",
+  "text": [
+   {
+    "who": "Kid",
+    "kind": "speech",
+    "text": "He's never lost on this one."
+   },
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "THEO BRANDT. BEST HANDS IN THE CITY. NOTHING ELSE TO SHOW FOR IT."
+   }
+  ]
+ },
+ {
+  "id": "I-03",
+  "aspect": "3:2",
+  "title": "Pike",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "Pike (heavyset, curly ponytail, round glasses, flannel shirt) leaning on the cabinet beside Theo, both grinning, a high score on the screen drawn as white glow",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Again? You're bad for business, man."
+   },
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "I'm bad for everyone's business."
+   }
+  ]
+ },
+ {
+  "id": "I-04",
+  "aspect": "3:2",
+  "title": "The debt",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "a cramped apartment at night, Theo sitting on a mattress on the floor, a pile of unpaid bills and final notices in his hands, rain on the window, a courier bag dropped by the door",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "THE COURIER JOB PAID FOR THE BIKE. NOT THE REST."
+   }
+  ]
+ },
+ {
+  "id": "I-05",
+  "aspect": "16:9",
+  "title": "The offer",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "inside the arcade, Conrad Weyl (fifties, slicked-back grey hair, double-breasted suit) standing beside Theo's cabinet among the kids, holding out a business card, perfectly out of place",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "Mr. Brandt. Your reaction times are… unusual. I'd like to pay you for them."
+   }
+  ]
+ },
+ {
+  "id": "I-06",
+  "aspect": "21:9",
+  "title": "CEREBRA campus",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "a modernist corporate research campus outside the city on a grey morning, concrete and dark glass buildings, a satellite dish, a parking lot with a few cars, a bicycle chained by the entrance, a sign with an abstract brain logo",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "CEREBRA SYSTEMS. THREE MONTHS FROM BANKRUPTCY. THREE MINUTES FROM THE FUTURE."
+   }
+  ]
+ },
+ {
+  "id": "I-07",
+  "aspect": "3:2",
+  "title": "Lena",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "a corridor of the lab, Dr. Lena Aurich (short grey-streaked hair, wire glasses, lab coat) shaking Theo's hand, studying him with a mix of warmth and worry, fluorescent lights overhead",
+  "text": [
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Lena Aurich. I built the thing you're about to sit in. Ask me anything."
+   },
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Does it hurt?"
+   },
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Not yet."
+   }
+  ]
+ },
+ {
+  "id": "I-08",
+  "aspect": "21:9",
+  "title": "The rig",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "wide view of the DEEPLINK lab: the padded reclining chair under a ring of lights, the bulky cabled helmet hanging above it, racks of tall workstations with CRT monitors, technicians at consoles, an observation window where Weyl watches",
+  "text": []
+ },
+ {
+  "id": "I-09",
+  "aspect": "2:3",
+  "title": "Helmet on",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "close-up of Theo lying in the reclining chair as Lena lowers the heavy helmet over his head, cables everywhere, his hand in the data glove gripping the armrest, his eyes looking up at her",
+  "text": [
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Count back from ten, Theo."
+   }
+  ]
+ },
+ {
+  "id": "I-10",
+  "aspect": "1:1",
+  "title": "Ten",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "extreme close-up of Theo's eye through the open visor, the reflection of a CRT screen glowing in the pupil",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Ten… nine…"
+   }
+  ]
+ },
+ {
+  "id": "I-11",
+  "aspect": "16:9",
+  "title": "The fall",
+  "section": "INTRO",
+  "drift": false,
+  "prompt": "Theo's body in the chair seen from above, dissolving at the edges into thin perspective grid lines that fall away into a black void, as if the drawing itself opens into depth",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "…eight…"
+   }
+  ]
+ },
+ {
+  "id": "0-01",
+  "aspect": "3:2",
+  "title": "Gasping awake",
+  "section": "SEQUENCE 0: AFTER CALIBRATION",
+  "drift": false,
+  "prompt": "Theo sitting up in the reclining chair, helmet pushed back, gasping and laughing at the same time, sweat on his face, technicians staring at their monitors",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Again. Put me back. Now."
+   }
+  ]
+ },
+ {
+  "id": "0-02",
+  "aspect": "3:2",
+  "title": "The numbers",
+  "section": "SEQUENCE 0: AFTER CALIBRATION",
+  "drift": false,
+  "prompt": "a technician turning a CRT monitor toward Lena, columns of numbers glowing white, Lena's face lit from below, surprised",
+  "text": [
+   {
+    "who": "Technician",
+    "kind": "speech",
+    "text": "Doctor… that's four times the last subject."
+   },
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Which subject?"
+   },
+   {
+    "who": "Technician",
+    "kind": "speech",
+    "text": "…Sorry."
+   }
+  ]
+ },
+ {
+  "id": "0-03",
+  "aspect": "16:9",
+  "title": "Weyl watches",
+  "section": "SEQUENCE 0: AFTER CALIBRATION",
+  "drift": false,
+  "prompt": "behind the observation glass, Conrad Weyl watching Theo laugh in the chair below, his reflection overlaid on the glass, a thin satisfied smile",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "Schedule him daily."
+   }
+  ]
+ },
+ {
+  "id": "1-01",
+  "aspect": "16:9",
+  "title": "Records",
+  "section": "SEQUENCE 1: AFTER GRID CITY",
+  "drift": false,
+  "prompt": "a wall of CRT monitors in the lab all showing the same high-score style readout, the team clapping, Theo in the chair raising a gloved fist, Lena not clapping",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "EVERY RECORD THEY HAD. IN ONE AFTERNOON."
+   }
+  ]
+ },
+ {
+  "id": "1-02",
+  "aspect": "3:2",
+  "title": "The cheque",
+  "section": "SEQUENCE 1: AFTER GRID CITY",
+  "drift": false,
+  "prompt": "Weyl handing Theo an envelope in a bright corporate office with a window over the campus, Theo holding it like it might bite",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "A bonus. Your debts are… handled."
+   },
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Just like that?"
+   },
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "Just like that."
+   }
+  ]
+ },
+ {
+  "id": "1-03",
+  "aspect": "3:2",
+  "title": "Closing his eyes",
+  "section": "SEQUENCE 1: AFTER GRID CITY",
+  "drift": true,
+  "prompt": "Theo lying on his mattress at night, eyes closed, and over his face and the dark room a faint drawn perspective grid of glowing lines, like the city of data still behind his eyelids",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "WHEN I CLOSED MY EYES, THE CITY WAS STILL THERE."
+   }
+  ]
+ },
+ {
+  "id": "2-01",
+  "aspect": "3:2",
+  "title": "No sleep",
+  "section": "SEQUENCE 2: AFTER CHROME SEA",
+  "drift": false,
+  "prompt": "a dawn kitchen, Theo at a small table with untouched coffee, staring at the tiles of the floor as if they were moving like waves, the light grey and cold",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "I STOPPED SLEEPING. I DIDN'T MISS IT."
+   }
+  ]
+ },
+ {
+  "id": "2-02",
+  "aspect": "16:9",
+  "title": "Without looking",
+  "section": "SEQUENCE 2: AFTER CHROME SEA",
+  "drift": true,
+  "prompt": "the arcade, Theo playing a game with his eyes closed and his head turned away from the screen, hands moving perfectly, Pike beside him staring, the crowd gone silent",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "…Theo. You're not even looking."
+   }
+  ]
+ },
+ {
+  "id": "2-03",
+  "aspect": "3:2",
+  "title": "Pike worries",
+  "section": "SEQUENCE 2: AFTER CHROME SEA",
+  "drift": false,
+  "prompt": "outside the arcade under the rain, Pike holding Theo by the shoulder, Theo smiling distractedly, neon reflections in puddles",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "What are they doing to you in there?"
+   },
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Making me better."
+   }
+  ]
+ },
+ {
+  "id": "2-04",
+  "aspect": "3:2",
+  "title": "The briefing",
+  "section": "SEQUENCE 2: AFTER CHROME SEA",
+  "drift": false,
+  "prompt": "a dark conference room, Weyl standing by a projection screen showing the blueprint of a rival company's network as a glowing diagram, Theo and Lena seated, Hollis by the door",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "A competitor stole our research. I want it back. Tonight."
+   },
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "That's not a test, Conrad. That's a crime."
+   }
+  ]
+ },
+ {
+  "id": "3-01",
+  "aspect": "16:9",
+  "title": "Headline",
+  "section": "SEQUENCE 3: AFTER FIREWALL CANYONS",
+  "drift": false,
+  "prompt": "a newspaper on a lab desk with a large headline about a rival tech company's catastrophic system failure (the headline area left blank for lettering), a coffee cup on it, Lena's hand clenched beside it",
+  "text": [
+   {
+    "who": "Headline",
+    "kind": "screen",
+    "text": "SYNAPTEC SYSTEMS CRASH: RESEARCH LOST"
+   },
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "You erased three years of their work."
+   }
+  ]
+ },
+ {
+  "id": "3-02",
+  "aspect": "3:2",
+  "title": "Theo shrugs",
+  "section": "SEQUENCE 3: AFTER FIREWALL CANYONS",
+  "drift": false,
+  "prompt": "Theo leaning against a rack of computers, arms folded, unbothered, Lena facing him angry, fluorescent light harsh",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "It was easy, Lena. It was like… they wanted out."
+   }
+  ]
+ },
+ {
+  "id": "3-03",
+  "aspect": "2:3",
+  "title": "Traffic",
+  "section": "SEQUENCE 3: AFTER FIREWALL CANYONS",
+  "drift": true,
+  "prompt": "Theo standing at a window high above a city intersection at rush hour, looking down at the traffic, faint lines drawn between the cars predicting their paths, his lips moving as he counts",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "THE LIGHTS WOULD CHANGE IN FOUR SECONDS. THE RED CAR WOULD TURN. I KNEW."
+   }
+  ]
+ },
+ {
+  "id": "3-04",
+  "aspect": "3:2",
+  "title": "The file name",
+  "section": "SEQUENCE 3: AFTER FIREWALL CANYONS",
+  "drift": false,
+  "prompt": "Theo alone at a terminal late at night in the lab, the CRT showing a directory listing with one entry highlighted, his face lit white, curious",
+  "text": [
+   {
+    "who": "Screen",
+    "kind": "screen",
+    "text": "SUBJECT_01 / MARSH, J. / ACCESS DENIED"
+   },
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Subject one?"
+   }
+  ]
+ },
+ {
+  "id": "4-01",
+  "aspect": "21:9",
+  "title": "The sealed door",
+  "section": "SEQUENCE 4: AFTER THE ARCHIVE",
+  "drift": false,
+  "prompt": "a long dim basement corridor of the lab, Theo walking toward a heavy sealed door with a keypad, cables running along the ceiling, a single fluorescent tube flickering",
+  "text": []
+ },
+ {
+  "id": "4-02",
+  "aspect": "16:9",
+  "title": "Juno",
+  "section": "SEQUENCE 4: AFTER THE ARCHIVE",
+  "drift": false,
+  "prompt": "inside a quiet medical room, Juno Marsh (thin, pale, shaved head with short regrowth) lying in a hospital bed with electrodes on her scalp, monitors beeping softly, Theo standing at the foot of the bed in shock",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "SHE HAD BEEN DIVING FOR THREE YEARS. SHE HAD NEVER COME BACK."
+   }
+  ]
+ },
+ {
+  "id": "4-03",
+  "aspect": "3:2",
+  "title": "Lena's confession",
+  "section": "SEQUENCE 4: AFTER THE ARCHIVE",
+  "drift": false,
+  "prompt": "Lena in the doorway of the medical room, glasses in her hand, face full of guilt, Theo turning toward her, Juno's bed between them",
+  "text": [
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Juno was the first. She went deeper than we designed. Her mind is still in there. Somewhere."
+   }
+  ]
+ },
+ {
+  "id": "4-04",
+  "aspect": "3:2",
+  "title": "Why",
+  "section": "SEQUENCE 4: AFTER THE ARCHIVE",
+  "drift": false,
+  "prompt": "close two-shot of Theo and Lena in the dim room, Theo's face hard, Lena's eyes wet",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Why didn't you tell me?"
+   },
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Because you'd have gone looking for her."
+   }
+  ]
+ },
+ {
+  "id": "5-01",
+  "aspect": "3:2",
+  "title": "Shaken",
+  "section": "SEQUENCE 5: AFTER FRACTAL BLOOM",
+  "drift": false,
+  "prompt": "Theo pulling off the helmet in the chair, shaking, a technician steadying him, monitors behind showing white static",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Someone said my name. Down there. Someone said my name."
+   }
+  ]
+ },
+ {
+  "id": "5-02",
+  "aspect": "2:3",
+  "title": "Her voice",
+  "section": "SEQUENCE 5: AFTER FRACTAL BLOOM",
+  "drift": true,
+  "prompt": "Theo in a bathroom at night, splashing water on his face, looking up into the mirror; in the reflection, behind his shoulder, the faint luminous outline of a woman made of light lines",
+  "text": [
+   {
+    "who": "Juno",
+    "kind": "whisper",
+    "text": "Theo."
+   }
+  ]
+ },
+ {
+  "id": "5-03",
+  "aspect": "16:9",
+  "title": "At her bedside",
+  "section": "SEQUENCE 5: AFTER FRACTAL BLOOM",
+  "drift": false,
+  "prompt": "Theo sitting beside Juno's hospital bed at night, holding her thin hand, the room dark except for the green glow of the monitors drawn in white",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Was that you?"
+   }
+  ]
+ },
+ {
+  "id": "6-01",
+  "aspect": "21:9",
+  "title": "The buyers",
+  "section": "SEQUENCE 6: AFTER JUNO'S GARDEN",
+  "drift": false,
+  "prompt": "a convoy of black cars arriving at the CEREBRA campus in the rain, men in military coats getting out, Weyl waiting under an umbrella to greet them, Hollis at his side",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "THEY DIDN'T COME FOR THE SCIENCE."
+   }
+  ]
+ },
+ {
+  "id": "6-02",
+  "aspect": "3:2",
+  "title": "Limits off",
+  "section": "SEQUENCE 6: AFTER JUNO'S GARDEN",
+  "drift": false,
+  "prompt": "Weyl leaning over a technician's console in the lab, pointing at a row of switches labelled with blank tags, the technician hesitating, Lena being held back by Hollis in the background",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "Remove the safety limits."
+   },
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "You'll kill him!"
+   },
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "Then we'll find out how far he can go first."
+   }
+  ]
+ },
+ {
+  "id": "6-03",
+  "aspect": "3:2",
+  "title": "Pike's basement",
+  "section": "SEQUENCE 6: AFTER JUNO'S GARDEN",
+  "drift": false,
+  "prompt": "a cluttered basement full of modems, monitors, cables and pizza boxes, Pike in a headset typing furiously, a printout of the CEREBRA campus pinned on the wall",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Okay, CEREBRA. Let's see who your phone company is."
+   }
+  ]
+ },
+ {
+  "id": "6-04",
+  "aspect": "3:2",
+  "title": "The garden in his head",
+  "section": "SEQUENCE 6: AFTER JUNO'S GARDEN",
+  "drift": true,
+  "prompt": "Theo sitting on the roof of the lab building at night, knees up, looking at the city lights, and around him drawn flowers made of thin glowing lines growing out of the concrete, which only he can see",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "She asked me to stay. And I wanted to."
+   }
+  ]
+ },
+ {
+  "id": "7-01",
+  "aspect": "16:9",
+  "title": "Turned",
+  "section": "SEQUENCE 7: AFTER BLACK ICE",
+  "drift": false,
+  "prompt": "the lab in chaos, alarms drawn as radiating lines, every CRT monitor showing the same message (blank for lettering), technicians backing away, Weyl furious at the observation glass",
+  "text": [
+   {
+    "who": "Screen",
+    "kind": "screen",
+    "text": "NO."
+   },
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "Get him out of that chair!"
+   }
+  ]
+ },
+ {
+  "id": "7-02",
+  "aspect": "3:2",
+  "title": "Hollis moves",
+  "section": "SEQUENCE 7: AFTER BLACK ICE",
+  "drift": false,
+  "prompt": "Hollis and two security guards running down the lab corridor toward the rig room, guns holstered, heavy boots, cables swinging from the ceiling",
+  "text": []
+ },
+ {
+  "id": "7-03",
+  "aspect": "3:2",
+  "title": "Lena locks the door",
+  "section": "SEQUENCE 7: AFTER BLACK ICE",
+  "drift": false,
+  "prompt": "Lena slamming her keycard into a panel to lock the rig room's door from inside, her back against it, Theo motionless in the chair behind her with the helmet on",
+  "text": [
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Go, Theo. All the way down. Finish it."
+   }
+  ]
+ },
+ {
+  "id": "7-04",
+  "aspect": "3:2",
+  "title": "Pike online",
+  "section": "SEQUENCE 7: AFTER BLACK ICE",
+  "drift": false,
+  "prompt": "Pike in his basement with three phones off the hook and a modem screaming, his monitor showing the campus network diagram, sweat on his forehead, grinning",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Theo, I've got you a door into their backbone. You've got about five minutes before they cut the power."
+   }
+  ]
+ },
+ {
+  "id": "7-05",
+  "aspect": "2:3",
+  "title": "The last dive",
+  "section": "SEQUENCE 7: AFTER BLACK ICE",
+  "drift": false,
+  "prompt": "Theo in the reclining chair, helmet on, his gloved hand gripping the armrest, his body very thin, the cables taut, fists hammering on the locked door in the background",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "radio",
+    "text": "Last dive."
+   }
+  ]
+ },
+ {
+  "id": "C1-J",
+  "aspect": "3:2",
+  "title": "Stress Test",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "a glass-walled observation gallery above the DEEPLINK lab, a row of investors in suits watching, Weyl gesturing toward Theo in the chair below like a salesman, CRT monitors showing traffic graphs",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "Gentlemen, watch what one mind can carry."
+   }
+  ]
+ },
+ {
+  "id": "C1-P",
+  "aspect": "3:2",
+  "title": "Phone Phreak",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "a phone booth on a rainy street at night, Pike squeezed inside it with a handset and a small electronic box wired to the phone, waving through the glass at Theo who is laughing",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "One little favour. Free long-distance for life. And a map of the whole phone network, while you're in there."
+   }
+  ]
+ },
+ {
+  "id": "C1-P-O",
+  "aspect": "3:2",
+  "title": "The map",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Pike's basement, a huge printout of a phone network diagram unrolled across the floor, Pike on his knees with a marker, astonished",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Theo... you didn't just get me free calls. This is the whole city."
+   }
+  ]
+ },
+ {
+  "id": "C1-S",
+  "aspect": "2:3",
+  "title": "Ghost Packet",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Theo alone in the lab late at night, the helmet in his lap, a CRT monitor beside him showing static, and in the static the faint suggestion of a woman's face drawn in white dots",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "SOMETHING IN THE CITY WAS CARRYING A VOICE. NOBODY HAD SENT IT."
+   }
+  ]
+ },
+ {
+  "id": "C2-J",
+  "aspect": "3:2",
+  "title": "Market Run",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Weyl in his office at night with a stock ticker scrolling on a CRT behind him, handing Theo a sheet of paper with a list of company names",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "I'd like to know what these companies will announce tomorrow. Before they do."
+   }
+  ]
+ },
+ {
+  "id": "C2-P",
+  "aspect": "3:2",
+  "title": "Dead Drop",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Pike and Theo in a late-night diner booth, Pike sliding a floppy disk across the table under a napkin, rain on the window, a waitress in the background",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Hide this somewhere deep. If they ever turn on you, it's your way to call me."
+   }
+  ]
+ },
+ {
+  "id": "C2-S",
+  "aspect": "2:3",
+  "title": "Drowned Signal",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Theo in the shower with his eyes closed, water running down his face, and in the falling water faint lines like a chrome ocean surface drawn in ink",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "UNDER THE SEA, SOMEONE WAS CALLING."
+   }
+  ]
+ },
+ {
+  "id": "C3-J",
+  "aspect": "3:2",
+  "title": "Extraction",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "a dark conference room, Weyl and Hollis with a projection of a rival company's prototype as a glowing wireframe, Theo in a chair with his feet on the table",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "It's ours, technically. They just don't know it yet."
+   }
+  ]
+ },
+ {
+  "id": "C3-P",
+  "aspect": "3:2",
+  "title": "Paper Trail",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Pike in his basement on the phone, a wall covered in printouts and red string, his face serious for the first time",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "I need their security logs, Theo. All of them. Something's wrong in that building."
+   }
+  ]
+ },
+ {
+  "id": "C3-S",
+  "aspect": "2:3",
+  "title": "Burn Marks",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Theo looking at his own hands under a desk lamp in the lab, the skin of his palms faintly marked with lines like scorch marks in the shape of circuits, Lena out of focus behind him",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "SOMEONE HAD RUN THROUGH THOSE CANYONS BEFORE ME. AND BURNED ALL THE WAY."
+   }
+  ]
+ },
+ {
+  "id": "C4-J",
+  "aspect": "3:2",
+  "title": "Clean Up",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Weyl leaning close to Theo in an empty corridor, speaking quietly, a hand on his shoulder, fluorescent light flickering above",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "There are some old files in the Archive. Embarrassing ones. Make them go away."
+   }
+  ]
+ },
+ {
+  "id": "C4-J-O",
+  "aspect": "3:2",
+  "title": "Refused or done",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "two versions side by side: on the left, Theo pulling off the helmet and looking straight at Weyl through the observation glass with defiance; on the right, Theo pulling off the helmet and looking at the floor in shame",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "I couldn't find them.",
+    "variant": "refused"
+   },
+   {
+    "who": "Right",
+    "kind": "caption",
+    "text": "I DELETED HER. ALMOST ALL OF HER.",
+    "variant": "done"
+   }
+  ],
+  "note": "the engine shows the half that matches the player's outcome; generate the two halves as separate images."
+ },
+ {
+  "id": "C4-P",
+  "aspect": "3:2",
+  "title": "Ledger",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Pike in his basement, holding up a printout of a bank statement to the light, Theo beside him, both looking at a long column of numbers",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Follow the money. It always goes somewhere with a flag on it."
+   }
+  ]
+ },
+ {
+  "id": "C4-P-O",
+  "aspect": "3:2",
+  "title": "The buyers",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Pike's basement, a printout with a government seal and columns of figures pinned to the wall, Pike and Theo staring at it in silence",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "These aren't investors, Theo. These are generals."
+   }
+  ]
+ },
+ {
+  "id": "C4-S",
+  "aspect": "2:3",
+  "title": "Juno's Diary",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Theo lying on his mattress at night reading a printout by flashlight, the pages full of handwriting, his face moved",
+  "text": [
+   {
+    "who": "Juno",
+    "kind": "diary",
+    "text": "Day ninety. I don't want to come back up."
+   }
+  ]
+ },
+ {
+  "id": "C5-J",
+  "aspect": "3:2",
+  "title": "Probe",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "a team of CEREBRA engineers around a whiteboard covered in fractal diagrams, arguing, Weyl watching with folded arms, Theo looking bored in the corner",
+  "text": [
+   {
+    "who": "Engineer",
+    "kind": "speech",
+    "text": "We need a map of it. We don't even know what it is."
+   }
+  ]
+ },
+ {
+  "id": "C5-P",
+  "aspect": "3:2",
+  "title": "Mirror Site",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Pike carrying a heavy computer tower up the stairs of an old apartment building at night, a friend's door open at the top, a cat watching",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "radio",
+    "text": "Copy everything here. If they come for my basement, the truth survives."
+   }
+  ]
+ },
+ {
+  "id": "C5-S",
+  "aspect": "1:1",
+  "title": "Seedling",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "close-up of Juno's hand on her hospital blanket, and beside it on the sheet a tiny flower drawn in glowing white lines that only Theo can see",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "THE FIRST THING SHE EVER MADE IN THERE WAS SMALL."
+   }
+  ]
+ },
+ {
+  "id": "C6-J",
+  "aspect": "3:2",
+  "title": "Harvest",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Weyl and two men in military coats in the observation gallery, looking down at Theo in the chair, one of them holding a clipboard with blank pages",
+  "text": [
+   {
+    "who": "Weyl",
+    "kind": "speech",
+    "text": "Bring us samples of her garden. Whatever she grows, we'll learn to build."
+   }
+  ]
+ },
+ {
+  "id": "C6-P",
+  "aspect": "3:2",
+  "title": "Lifeline",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Lena and Pike meeting secretly in a rainy parking lot at night beside Pike's old car, Lena handing over a folded diagram, both nervous",
+  "text": [
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "If he goes too deep, he needs a way back. Build it with him."
+   }
+  ]
+ },
+ {
+  "id": "C6-P-O",
+  "aspect": "2:3",
+  "title": "A rope",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Theo in the chair, helmet on, and drawn from the helmet a single thin white line running out of the lab, through the walls and across the city to Pike's basement window",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "A WAY HOME. JUST IN CASE."
+   }
+  ]
+ },
+ {
+  "id": "C6-S",
+  "aspect": "3:2",
+  "title": "Her Memories",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Theo standing in front of an old photograph pinned in Juno's medical room: a young Juno smiling by a river with a big shaggy dog, the photo held by a single pin",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "She had a dog."
+   }
+  ]
+ },
+ {
+  "id": "C7-J",
+  "aspect": "21:9",
+  "title": "Live Fire",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "a dark military command room inside the CEREBRA campus, generals and officers watching a wall of CRT monitors showing a city network diagram, Weyl standing beside them proudly, Theo seen on one monitor in the chair",
+  "text": [
+   {
+    "who": "General",
+    "kind": "speech",
+    "text": "Show us what it does to a city."
+   }
+  ]
+ },
+ {
+  "id": "C7-J-O",
+  "aspect": "3:2",
+  "title": "Applause",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "the generals applauding, Weyl shaking hands, and on a monitor in the corner a frame of Theo in the chair with his eyes open and empty, Lena turning away",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "THEY CLAPPED. I DIDN'T REMEMBER DOING IT."
+   }
+  ]
+ },
+ {
+  "id": "C7-P",
+  "aspect": "3:2",
+  "title": "Backdoor",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Pike in his basement with three phones off the hook, a soldering iron, the phone network map from earlier pinned on the wall, circling a node in red",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Your free calls are about to pay off, buddy. That's our door into their backbone."
+   }
+  ]
+ },
+ {
+  "id": "C7-S",
+  "aspect": "2:3",
+  "title": "The Way Out",
+  "section": "CONTRACT PANELS",
+  "drift": false,
+  "prompt": "Theo at Juno's bedside, holding her hand, and from their joined hands a thin path of white light winding away into darkness across the whole page",
+  "text": [
+   {
+    "who": "Juno",
+    "kind": "whisper",
+    "text": "I'm still here. This way."
+   }
+  ]
+ },
+ {
+  "id": "A-01",
+  "aspect": "16:9",
+  "title": "Tearing out",
+  "section": "ENDING A: COME BACK",
+  "drift": false,
+  "prompt": "Theo in the chair arching up as he rips the helmet off his own head, cables snapping, sparks drawn as bursts of lines, Lena reaching for him, the door finally bursting open behind her",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Not without me."
+   }
+  ]
+ },
+ {
+  "id": "A-01L",
+  "aspect": "16:9",
+  "title": "Lifeline variant (if *Lifeline* was played)",
+  "section": "ENDING A: COME BACK",
+  "drift": false,
+  "prompt": "Theo in the chair, helmet still on, his body relaxing as a thin white line drawn from the helmet leads out of the lab, Lena gently lifting the visor, Theo opening his eyes calmly",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "I followed the rope home."
+   }
+  ]
+ },
+ {
+  "id": "A-02",
+  "aspect": "3:2",
+  "title": "Arrest",
+  "section": "ENDING A: COME BACK",
+  "drift": false,
+  "prompt": "the campus forecourt at dawn in the rain, police cars and news vans, Weyl in handcuffs being led to a car, his suit soaked, his face blank; Hollis watching with his hands open at his sides",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "PIKE SENT EVERYTHING TO EVERY NEWSROOM IN THE COUNTRY. ALL AT ONCE."
+   }
+  ]
+ },
+ {
+  "id": "A-02F",
+  "aspect": "3:2",
+  "title": "Weyl walks free (if evidence is under 5)",
+  "section": "ENDING A: COME BACK",
+  "drift": false,
+  "prompt": "the campus forecourt on a grey morning, Weyl getting into a black car with a lawyer, untouched, giving a small nod toward the camera as the door closes, a few reporters held back",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "WE DIDN'T HAVE ENOUGH. HE WALKED OUT SMILING."
+   }
+  ]
+ },
+ {
+  "id": "A-03",
+  "aspect": "3:2",
+  "title": "Lena and Juno",
+  "section": "ENDING A: COME BACK",
+  "drift": false,
+  "prompt": "Lena sitting by Juno's hospital bed, holding her hand, monitors calm, morning light through the window",
+  "text": [
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "We'll find a way to bring you home. Slowly. Properly."
+   }
+  ]
+ },
+ {
+  "id": "A-04",
+  "aspect": "3:2",
+  "title": "Ordinary",
+  "section": "ENDING A: COME BACK",
+  "drift": false,
+  "prompt": "Theo walking out of the campus gate with a blanket around his shoulders, thin and tired, Pike waiting by his old car with two coffees",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "You look terrible."
+   },
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "I feel slow."
+   },
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Welcome back."
+   }
+  ]
+ },
+ {
+  "id": "A-05",
+  "aspect": "21:9",
+  "title": "The arcade, again",
+  "section": "ENDING A: COME BACK",
+  "drift": false,
+  "prompt": "the arcade on a rainy morning, Theo at a cabinet, Pike beside him, Theo's on-screen game clearly lost, both laughing hard, a few kids grinning",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "I LOST. FIRST TIME IN SIX YEARS."
+   },
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Again."
+   }
+  ]
+ },
+ {
+  "id": "A-06",
+  "aspect": "1:1",
+  "title": "Last panel",
+  "section": "ENDING A: COME BACK",
+  "drift": false,
+  "prompt": "close-up of Theo's hand dropping a coin into the arcade slot, the coin catching the light",
+  "text": []
+ },
+ {
+  "id": "B-01",
+  "aspect": "16:9",
+  "title": "The body stops",
+  "section": "ENDING B: ASCEND",
+  "drift": false,
+  "prompt": "the rig room as the door bursts open, Hollis and guards rushing in, Lena kneeling by the chair, Theo's body perfectly still under the helmet, the monitors all showing a flat line drawn as a single white stroke",
+  "text": [
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "He's gone."
+   },
+   {
+    "who": "Technician",
+    "kind": "speech",
+    "text": "No… look at the network load."
+   }
+  ]
+ },
+ {
+  "id": "B-02",
+  "aspect": "3:2",
+  "title": "Every screen",
+  "section": "ENDING B: ASCEND",
+  "drift": false,
+  "prompt": "a wall of every CRT monitor in the lab lighting up at once with the same image of a single open eye drawn in white lines, the staff frozen in silhouette",
+  "text": []
+ },
+ {
+  "id": "B-03",
+  "aspect": "21:9",
+  "title": "The city wakes",
+  "section": "ENDING B: ASCEND",
+  "drift": false,
+  "prompt": "the grey city at night seen from above, and in every window, shop front, phone booth and billboard the same eye glowing, thousands of points of light forming a pattern across the whole city",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "AT 4:12 A.M., EVERY SCREEN IN THE COUNTRY OPENED ITS EYES."
+   }
+  ]
+ },
+ {
+  "id": "B-04",
+  "aspect": "3:2",
+  "title": "Pike's basement",
+  "section": "ENDING B: ASCEND",
+  "drift": false,
+  "prompt": "Pike in his basement surrounded by monitors all showing the eye, his pager buzzing on the desk, a phone ringing, Pike staring with tears in his eyes and a sad smile",
+  "text": [
+   {
+    "who": "Pike",
+    "kind": "speech",
+    "text": "Show-off."
+   }
+  ]
+ },
+ {
+  "id": "B-05",
+  "aspect": "3:2",
+  "title": "Weyl",
+  "section": "ENDING B: ASCEND",
+  "drift": false,
+  "prompt": "Weyl alone in his dark office, his own computer screen showing the eye looking at him, his hand frozen on the phone, fear on his face for the first time",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "screen_voice",
+    "text": "Hello, Conrad."
+   }
+  ]
+ },
+ {
+  "id": "B-06",
+  "aspect": "21:9",
+  "title": "Into colour",
+  "section": "ENDING B: ASCEND",
+  "drift": false,
+  "prompt": "the final panel, the city skyline at sunrise, the black-and-white ink drawing dissolving from the right side into a full-colour digital landscape of glowing grids and chrome light, two luminous figures of light flying together over the boundary",
+  "text": [],
+  "note": "this is the only panel in the game that is not black and white. Generate it without the Style Prefix's \"no colour\" clause, or colour the right half in the finishing pass."
+ },
+ {
+  "id": "C-01",
+  "aspect": "16:9",
+  "title": "Reaching her",
+  "section": "ENDING C: FREE HER",
+  "drift": false,
+  "prompt": "a black space drawn with sparse white lines, a figure of light (Theo) reaching into a vast luminous woman made of flowing lines (Juno), and at her centre a small, curled, human figure of a woman",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "There you are. The real you."
+   }
+  ]
+ },
+ {
+  "id": "C-02",
+  "aspect": "3:2",
+  "title": "Two awake",
+  "section": "ENDING C: FREE HER",
+  "drift": false,
+  "prompt": "two hospital beds side by side in the lab's medical room, Theo and Juno both waking at the same moment, both pulling off electrodes, Lena between them with her hands over her mouth",
+  "text": [
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Oh my God."
+   }
+  ]
+ },
+ {
+  "id": "C-03",
+  "aspect": "3:2",
+  "title": "Forgetting",
+  "section": "ENDING C: FREE HER",
+  "drift": false,
+  "prompt": "Theo sitting up in his bed, looking at his hands as if they were strange, a nurse checking his pupils with a pen light",
+  "text": [
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "I can't remember the way down. I can't remember any of it."
+   },
+   {
+    "who": "Lena",
+    "kind": "speech",
+    "text": "Good."
+   }
+  ]
+ },
+ {
+  "id": "C-04",
+  "aspect": "3:2",
+  "title": "Justice",
+  "section": "ENDING C: FREE HER",
+  "drift": false,
+  "prompt": "the campus forecourt at dawn, police and news vans, Weyl being led away in handcuffs, Pike in the crowd holding up a stack of printouts like a trophy",
+  "text": [
+   {
+    "who": "Caption",
+    "kind": "caption",
+    "text": "PIKE DID THE REST."
+   }
+  ]
+ },
+ {
+  "id": "C-05",
+  "aspect": "21:9",
+  "title": "Learning to walk",
+  "section": "ENDING C: FREE HER",
+  "drift": false,
+  "prompt": "a hospital rehabilitation room with parallel bars, morning light through tall windows, Juno and Theo each holding a bar, taking slow steps toward each other, both weak, both smiling, Lena and Pike watching from the doorway",
+  "text": [
+   {
+    "who": "Juno",
+    "kind": "speech",
+    "text": "It's so slow out here."
+   },
+   {
+    "who": "Theo",
+    "kind": "speech",
+    "text": "Yeah. I like it."
+   }
+  ]
+ },
+ {
+  "id": "C-06",
+  "aspect": "1:1",
+  "title": "Last panel",
+  "section": "ENDING C: FREE HER",
+  "drift": false,
+  "prompt": "close-up of two hands, one thin and pale, one with a fingerless cycling glove, touching fingertips on a parallel bar",
+  "text": []
+ },
+ {
+  "id": "T-01",
+  "aspect": "16:9",
+  "title": "Title card",
+  "section": "TITLE AND MENU ART (OPTIONAL)",
+  "drift": false,
+  "prompt": "Theo lying in the DEEPLINK chair with the helmet on, drawn in black and white ink, and from the helmet a fan of perspective grid lines exploding outward across the whole image into a deep black void, strong composition with empty space at the top for a logo",
+  "text": []
+ },
+ {
+  "id": "T-02",
+  "aspect": "21:9",
+  "title": "Menu background",
+  "section": "TITLE AND MENU ART (OPTIONAL)",
+  "drift": false,
+  "prompt": "wide view of the dark DEEPLINK lab at night, empty chair under a single ring of light, CRT monitors glowing, cables on the floor, rain on the observation window, quiet and ominous",
+  "text": []
+ }
+]
