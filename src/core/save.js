@@ -4,7 +4,7 @@ const OPT = 'deeplink_options_v1';
 
 export const DEFAULT_OPTIONS = {
   difficulty: 'normal', gameSpeed: 1, autoFire: false, autoLock: false, wideGates: false, lowFlash: false, colorBlind: 'off',
-  subtitles: true, beatIndicator: true, shake: 1, res: '4:3', hires: false, dither: true, crt: false, wobble: false, bloom: 1,
+  subtitles: true, beatIndicator: true, shake: 1, res: 'auto', hires: false, dither: true, crt: false, wobble: false, bloom: 1,
   musicVol: 0.9, sfxVol: 0.8, mouseSteer: true, invertY: false, keys: null, controlMode: 'standard', mouseSens: 1, touch: 'auto', touchSwap: false,
   trailerSize: 1440, trailerMbps: 80,
 };

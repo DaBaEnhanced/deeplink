@@ -99,7 +99,9 @@ export class Hud {
     }
     // Sync
     g.textAlign = 'right';
-    const sx = ox + vw - pad, sy = oy + vh - pad - 4 * u;
+    // with the touch controls on, the right-hand HUD moves up and in, clear of the pause button and the thumb buttons
+    const tR = info.touch ? Math.max(0, H * 0.16 - (W - ox - vw)) : 0;
+    const sx = ox + vw - pad - tR, sy = info.touch ? oy + pad + 78 * u : oy + vh - pad - 4 * u;
     g.font = `${(sim.overdrive ? 26 : 20) * u * (1 + kick * 0.08)}px ${HUD_FONT}`;
     g.fillStyle = sim.overdrive ? `hsl(${(info.time * 300) % 360},100%,75%)` : '#ffffff';
     g.fillText(`×${sim.sync.toFixed(1)}`, sx, sy - 4 * u);
@@ -120,9 +122,9 @@ export class Hud {
     for (let i = 0; i < 4; i++) { const on = (sim.beatIndex % 4 + 4) % 4 === i; g.fillStyle = on ? '#ffffff' : 'rgba(255,255,255,0.25)'; g.fillRect(sx - (4 - i) * 6 * u, sy + 3 * u, 4 * u, 2 * u); }
     // score
     g.font = `${12 * u}px ${HUD_FONT}`; g.textAlign = 'right'; g.fillStyle = '#ffffff';
-    g.fillText(String(sim.stats.score).padStart(8, '0'), ox + vw - pad, oy + pad + 4 * u);
+    g.fillText(String(sim.stats.score).padStart(8, '0'), ox + vw - pad - tR, oy + pad + 4 * u);
     g.font = `${9 * u}px ${HUD_FONT}`; g.fillStyle = 'rgba(200,240,255,0.7)';
-    g.fillText(`${info.sectionLabel}`, ox + vw - pad, oy + pad + 14 * u);
+    g.fillText(`${info.sectionLabel}`, ox + vw - pad - tR, oy + pad + 14 * u);
     // objective (contracts)
     g.textAlign = 'left';
     const obj = sim.dive.objective;

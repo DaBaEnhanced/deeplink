@@ -51,6 +51,7 @@ class Game {
     this.input.onFirstTouch = () => { this.audio.unlock(); };
     // auto-fire follows the touch controls (on while they are shown) instead of being saved on: an earlier version turned the
     // saved option on at the first touch, which a Windows touchpad / touchscreen could trigger — undo that once
+    if (!this.opts.resAuto) { if (this.opts.res === '4:3') this.opts.res = 'auto'; this.opts.resAuto = true; saveOptions(this.opts); this.resize(); }   // fill the screen by default (phones: no letterbox)
     if (this.opts.touchInit && !this.opts.touchFireFix) { this.opts.autoFire = false; this.opts.touchFireFix = true; this.saveOptions(); }
     this.hudCanvas.addEventListener('click', () => { this.audio.unlock(); if (this.state === 'story' && this.panels.active) this.panels.next(); });
     if (this.lastCrash) { // shown for 12 s over the title; F9 copies the details
@@ -85,6 +86,12 @@ class Game {
     for (const c of [this.gpuCanvas, this.hudCanvas]) { c.width = W; c.height = H; }
     let [rw, rh] = this.opts.res === '16:9' ? [480, 270] : [400, 300];
     let k = Math.max(1, Math.floor(Math.min(W / rw, H / rh)));
+    if (this.opts.res === 'auto' && W > H) {
+      // fill the screen: ~300 internal lines at a whole-number scale, as wide as the screen (up to 21:9), no letterbox
+      k = Math.max(1, Math.round(H / 300)); while (H / k > 360) k++;
+      rh = Math.floor(H / k); rw = Math.max(Math.round(rh * 4 / 3), Math.min(Math.floor(W / k), Math.round(rh * 21 / 9)));
+      if (rw * k > W) { rw = Math.floor(W / k); rh = Math.min(rh, Math.round(rw * 3 / 4)); }
+    }
     if (this.opts.hires || this.params.has('hires')) { const a = rw / rh; let vw = W, vh = Math.round(W / a); if (vh > H) { vh = H; vw = Math.round(H * a); } rw = Math.round(vw / 2); rh = Math.round(vh / 2); k = 2; }
     if (this.renderer && this.renderer.ok) this.renderer.setRes(rw, rh);
     const vw = rw * k, vh = rh * k;
